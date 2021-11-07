@@ -1,0 +1,21 @@
+mongodbDatabase: exampleDb
+mongodbUri: "mongodb://127.0.0.1:27017"
+apiPort: 9898
+
+spring:
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: 'false'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http:
+          server:
+            requests: 'true'

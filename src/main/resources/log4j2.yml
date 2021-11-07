@@ -1,0 +1,26 @@
+Configuration:
+  status: debug
+
+  Appenders:
+    Console:
+      name: CONSOLE
+      target: SYSTEM_OUT
+      PatternLayout:
+        Pattern: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %c{3} - %msg%n"
+
+  Loggers:
+    Logger:
+      - name: com.hacom.evaluacion
+        additivity: false
+        level: info
+        AppenderRef:
+          - ref: CONSOLE
+      - name: com.hacom.evaluacion.service
+        additivity: false
+        level: info
+        AppenderRef:
+          - ref: CONSOLE
+    Root:
+      level: info
+      AppenderRef:
+        ref: CONSOLE
